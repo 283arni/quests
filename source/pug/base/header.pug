@@ -3,33 +3,38 @@ mixin header(headerMod, currentPage)
     var headerLinks = [
       {
         href: "#",
-        text: "Страница 1"
+        text: "квесты"
       },
       {
         href: "#",
-        text: "Страница 2"
+        text: "новичкам"
       },
       {
         href: "#",
-        text: "Страница 3"
+        text: "отзывы"
+      },
+      {
+        href: "#",
+        text: "акции"
+      },
+      {
+        href: "#",
+        text: "контакты"
       },
     ]
 
-  header(class=(headerMod) ? "header header--" + headerMod : "header")
+  header(class=(headerMod) ? "header header_" + headerMod: "header")
     .header__wrapper
       if(currentPage === "main")
-        a.header__logo Логотип
+        a.header__logo
+          +icon("logo-group", 134, 50)
       else
-        a.header__logo(href="main.html", aria-label="Переход на главную") Логотип
-      nav.main-nav
-        button.main-nav__toggle.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
+        a.header__logo(href="main.html", aria-label="Переход на главную")
+          +icon("logo-group", 134, 50)
+      nav.nav
+        button.nav__menu.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
           +icon("icon-burger", 20, 20)
-        .main-nav__wrapper
-          ul.main-nav__list
-            each link, index in headerLinks
-              if(index === currentPage)
-                li
-                  a.main-nav__link.main-nav__link--active=link.text
-              else
-                li
-                  a.main-nav__link(href=link.href)=link.text
+        ul
+          each link, index in headerLinks
+            li
+              a(href=link.href)=link.text

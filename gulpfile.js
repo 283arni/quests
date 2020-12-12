@@ -40,6 +40,15 @@ const css = () => {
       .pipe(server.stream());
 };
 
+const fonts = () => {
+  return gulp.src('source/sass/global/fonts.scss')
+    .pipe(sass())
+    .pipe(postcss([autoprefixer({
+      grid: true,
+    })]))
+    .pipe(gulp.dest('build/css'))
+};
+
 const js = () => {
   return gulp.src(['source/js/main.js'])
       .pipe(webpackStream(webpackConfig))
@@ -119,7 +128,7 @@ const clean = () => {
   return del('build');
 };
 
-const build = gulp.series(clean, svgo, copy, css, sprite, js, pugToHtml);
+const build = gulp.series(clean, svgo, copy, css, fonts, sprite, js, pugToHtml);
 
 const start = gulp.series(build, syncserver);
 

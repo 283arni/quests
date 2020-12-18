@@ -1,0 +1,42 @@
+extends ../base/layout
+
+block data
+
+block variables
+  - var title = "Escape Room - Квест"
+  - var wrapperMod = ""
+  - var hasHeader = true
+  - var headerMod = ""
+  - var hasFooter = true
+  - var footerMod = ""
+  - var currentPage = ""
+
+block main
+  main.maniac
+    .container
+      .maniac__wrapper
+        a(href="quests.html") все квесты
+        span хоррор, триллер
+        h1 маньяк
+        .maniac__description
+          .maniac__info
+            .maniac__info-block
+              .maniac__align
+                +icon("clock", 20, 20)
+                span 60 мин
+            .maniac__info-block
+              .maniac__align
+                +icon("person", 18, 23)
+                span 3–4 чел
+            .maniac__info-block
+              .maniac__align
+                +icon("puzzle", 22, 22)
+                span средняя сложность
+          p В комнате с приглушённым светом несколько человек, незнакомых друг с другом, приходят в себя. Никто не помнит, что произошло прошлым вечером. Руки и ноги связаным, но одному из вас получилось освободиться. На стене висит пугающий таймер и запущен отстёт 60 минут. Сможете ли вы разобраться в стрессовой ситуации, помочь другим, разобраться что произошло и выбраться из комнаты?
+          a(href="table.html") забронировать
+
+block modals
+  +modal("modal_feedback")
+    +modal-feedback()
+  +modal("modal_location modal_no-scale modal_fit-content")
+    +modal-location()

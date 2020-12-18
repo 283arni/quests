@@ -1,29 +1,20 @@
 extends ../base/layout
 
 block variables
-  - var title = "Главная"
+  - var title = "Escape Room — главная"
+  - var currentPage = "Главная"
 
 block main
-  -
-    var pages = [
-      {
-        name: "UI Kit — components.html",
-        src: "components.html"
-      },
-      {
-        name: "Главная — main.html",
-        src: "main.html"
-      },
-      {
-        name: "Название страницы (состояние страницы, если отдельное) — ссылка на страницу",
-        src: "#"
-      },
-    ]
+  main.main
+    .container
+      .main__wrapper
+        h1 Лучшие квесты в Новосибирске
+        p Надоело проводить свободное время лёжа на диване? Игровые площадки questroom на целый час погружают вас в мир незабываемых авантюр. Ищите подсказки, решайте головоломки и находите выход из комнаты!
+        a(href="quests.html") выбрать квест
 
-  main.container.main-index
-    img(src="https://via.placeholder.com/300x150" width="300" alt="Логотип проекта")
-    h1 Список страниц и компонентов
-    ol
-      each page in pages
-        li
-          a(href= page.src)= page.name
+
+block modals
+  +modal("modal_feedback")
+    +modal-feedback()
+  +modal("modal_location modal_no-scale modal_fit-content")
+    +modal-location()

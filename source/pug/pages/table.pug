@@ -1,0 +1,135 @@
+extends ../base/layout
+
+block variables
+  - var title = "Escape Room — расписание"
+  - var wrapperMod = ""
+  - var hasHeader = true
+  - var headerMod = ""
+  - var hasFooter = true
+  - var footerMod = ""
+  - var currentPage = "" //- для остальных страниц пишем либо пустую строку, либо индекс
+
+
+block main
+  -
+    var times = [
+      {
+        time: "9:45",
+        price: "1400 ₽",
+        reserved: false
+      },
+      {
+        time: "11:00",
+        price: "1400 ₽",
+        reserved: false
+      },
+      {
+        time: "12:15",
+        price: "1400 ₽",
+        reserved: true
+      },
+      {
+        time: "13:30",
+        price: "1400 ₽",
+        reserved: true
+      },
+      {
+        time: "14:45",
+        price: "1400 ₽",
+        reserved: false
+      },
+      {
+        time: "16:00",
+        price: "1500 ₽",
+        reserved: false
+      },
+      {
+        time: "17:15",
+        price: "1500 ₽",
+        reserved: true
+      },
+      {
+        time: "18:30",
+        price: "1500 ₽",
+        reserved: false
+      },
+      {
+        time: "19:45",
+        price: "1500 ₽",
+        reserved: false
+      },
+      {
+        time: "21:00",
+        price: "1800 ₽",
+        reserved: false
+      },
+      {
+        time: "22:15",
+        price: "1800 ₽",
+        reserved: true
+      },
+      {
+        time: "23:30",
+        price: "2000 ₽",
+        reserved: true
+      },
+
+
+    ]
+
+
+  main.table
+    .table__overlay
+    .container
+      .table__wrapper
+        a(href="maniac.html") описание
+        .table__subtitle
+          span хоррор, триллер
+          span выбранный квест
+
+        .table__title
+          h1 маньяк
+          .table__info#info
+            span Вы выбрали игру
+            span  22 марта в 16:00.
+            span  К оплате 1500 рублей.
+          button#payment(type="button")
+            span Перейти к оплате
+            +icon("triangle", 5, 7)
+
+        .table__block
+          .table__date
+            button#choose-date(type="button")
+              span Выберите дату
+              +icon("triangle", 5, 7)
+            span#date 22 марта
+          .table__samples#samples
+            div.table__samples-free
+            span — сводобно
+            div.table__samples-reserved
+            span — занято
+            div.table__samples-check
+            span — выбрано вами
+          .table__times#times
+            form
+              each time, index in times
+                if(time.reserved)
+                  .table__time
+                    input(type="radio" name="tab" id="time-" + (index + 1) disabled)
+                    label.table__time-reserved(for="time-" + (index + 1))
+                      span= time.time
+                    span= time.price
+                else
+                  .table__time
+                    input(type="radio" name="tab" id="time-" + (index + 1))
+                    label(tabindex=0 for="time-" + (index + 1))
+                      span= time.time
+                    span= time.price
+
+
+
+block modals
+  +modal("modal_feedback")
+    +modal-feedback()
+  +modal("modal_location modal_no-scale modal_fit-content")
+    +modal-location()

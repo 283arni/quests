@@ -1,0 +1,74 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: $color-black center/cover url("../img/bg/main-min.jpg");
+
+  @include phones {
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.main__wrapper {
+  width: 48%;
+
+  @include phones {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 65px;
+  }
+
+  h1 {
+    font-weight: 800;
+    font-size: 64px;
+    color: $color-white;
+    line-height: 110%;
+    margin: 0 0 32px 0;
+
+    @include phones {
+      font-size: 36px;
+      margin-bottom: 35px;
+    }
+  }
+
+  p {
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 150%;
+    margin: 0 0 68px 0;
+
+    @include phones {
+      display: none;
+    }
+  }
+
+  a {
+    display: inline-block;
+    vertical-align: middle;
+    background: $color-orange;
+    border-radius: 65px;
+    font-weight: 800;
+    font-size: 17px;
+    text-transform: uppercase;
+    color: $color-white;
+    padding: 21px 52px;
+    letter-spacing: 0.03em;
+    border: transparent;
+    transition: 0.3s;
+
+    @include phones {
+      font-size: 14px;
+      padding: 15px 32px;
+    }
+
+    &:hover {
+      background: $color-orange-hover;
+    }
+
+    &:active {
+      opacity: 0.9;
+    }
+  }
+}

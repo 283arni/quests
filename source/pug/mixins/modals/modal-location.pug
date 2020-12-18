@@ -1,0 +1,15 @@
+mixin modal-location()
+  - var cities = ["Новосибирск", "Иркутск", "Смоленск", "Волгоград", "Комсомольск-на-Амуре"];
+
+  .modal__location-content
+    h2 Ваш город:
+    button(type="button")
+      +icon("target", 20, 20)
+      span Определить местоположение
+    a(href="#") ... или выберите вручную
+    ul
+      each city in cities
+        if(city === "Новосибирск")
+          li(tabindex=0).active= city
+        else
+          li(tabindex=0)= city

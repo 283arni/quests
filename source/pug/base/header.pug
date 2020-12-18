@@ -2,7 +2,7 @@ mixin header(headerMod, currentPage)
   -
     var headerLinks = [
       {
-        href: "#",
+        href: "quests.html",
         text: "квесты"
       },
       {
@@ -25,16 +25,33 @@ mixin header(headerMod, currentPage)
 
   header(class=(headerMod) ? "header header_" + headerMod: "header")
     .header__wrapper
-      if(currentPage === "main")
-        a.header__logo
-          +icon("logo-group", 134, 50)
+      if(currentPage === "Главная")
+        .header__logo
+          a
+            +icon("logo-group", 134, 52)
       else
-        a.header__logo(href="main.html", aria-label="Переход на главную")
-          +icon("logo-group", 134, 50)
-      nav.nav
-        button.nav__menu.btn-reset(type="button", aria-label="Переключатель отображения меню", aria-pressed="false")
-          +icon("icon-burger", 20, 20)
-        ul
-          each link, index in headerLinks
-            li
-              a(href=link.href)=link.text
+        .header__logo
+          a(href="index.html", aria-label="Переход на главную")
+            +icon("logo-group", 134, 52)
+
+      input#menu-button(type="checkbox")
+      label(for="menu-button") МЕНЮ
+        span
+
+      .header__container
+        nav.header__nav
+          ul
+            each link in headerLinks
+              if(currentPage !== "Главная" && link.text === "квесты")
+                li
+                  a.active(href=link.href)=link.text
+              else
+                li
+                  a(href=link.href)=link.text
+
+        button(type="button" data-modal="location")
+          +icon("location", 16, 21)
+          span новосибирск
+        a(href="tel:+73832840160") 8 (383) 284 01 60
+
+        +footer

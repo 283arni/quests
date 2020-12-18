@@ -1,7 +1,16 @@
 import {disableScrolling, enableScrolling} from './scroll-lock';
 
+const fieldName = document.querySelector('#name');
+const closeBtnLocal = document.querySelector('.modal_location .modal__close-btn');
+
+const focusElement = (element) => {
+  setTimeout(() => {
+    element.focus();
+  }, 300);
+};
+
 const openModal = (modal, callback, preventScrollLock) => {
-  modal.classList.add('modal--active');
+  modal.classList.add('modal_active');
 
   if (callback) {
     callback();
@@ -13,7 +22,7 @@ const openModal = (modal, callback, preventScrollLock) => {
 };
 
 const closeModal = (modal, callback, preventScrollLock) => {
-  modal.classList.remove('modal--active');
+  modal.classList.remove('modal_active');
 
   if (callback) {
     callback();
@@ -27,7 +36,7 @@ const closeModal = (modal, callback, preventScrollLock) => {
 const onEscPress = (evt, modal, callback) => {
   const isEscKey = evt.key === 'Escape' || evt.key === 'Esc';
 
-  if (isEscKey && modal.classList.contains('modal--active')) {
+  if (isEscKey && modal.classList.contains('modal_active')) {
     evt.preventDefault();
     closeModal(modal, callback);
   }
@@ -58,7 +67,16 @@ const setupModal = (modal, closeCallback, modalBtns, openCallback, noPrevDefault
         if (!noPrevDefault) {
           evt.preventDefault();
         }
+
         openModal(modal, openCallback, preventScrollLock);
+
+        if (btn.dataset.modal === 'feedback') {
+          focusElement(fieldName);
+        }
+
+        if (btn.dataset.modal === 'location') {
+          focusElement(closeBtnLocal);
+        }
       });
     });
   }

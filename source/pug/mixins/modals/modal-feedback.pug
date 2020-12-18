@@ -1,2 +1,25 @@
 mixin modal-feedback()
-  p.modal__description Обычная модалка
+  - var text = 'Я согласен с <a href="#">правилами обработки персональных данных</a> и пользовательским соглашением'
+
+  .modal__feedback-content
+    h2 Задайте вопрос
+    form
+      .modal__name
+        div Чтобы мы смогли обращаться к вам, оставьте ваше имя
+        input#name(type="text" placeholder="Петя" minlength="3" required)
+        label(for="name") Имя
+        span#error-name
+      .modal__mail
+        div Чтобы вы получили ответ, оставьте ваш e-mail
+        input#mail(type="email" placeholder="petiy-the-best@mail.ru" minlength="6" required)
+        label(for="mail") E-mail
+        span#error-mail
+      .modal__text
+        label(for="text") Ваш вопрос:
+        textarea#text(placeholder="Начните вводить ..." maxlength="300")
+      button(type="submit") отправить вопрос
+      .modal__check
+        input#check(type="checkbox")
+        label#check-label(for="check" tabindex=0)
+        p!= text
+        span#error-check

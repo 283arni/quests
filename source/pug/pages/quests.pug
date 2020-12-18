@@ -1,0 +1,170 @@
+extends ../base/layout
+
+block data
+  include ../data/placeholder
+
+block variables
+  - var title = "Escape Room — квесты"
+  - var wrapperMod = ""
+  - var hasHeader = true
+  - var headerMod = ""
+  - var hasFooter = true
+  - var footerMod = ""
+  - var currentPage = "" //- для остальных страниц пишем либо пустую строку, либо индекс
+
+block main
+  -
+    var list = [
+      {
+        title:"Склеп",
+        img: "crypt",
+        hit: true,
+        address: "пр. Ленина, 37",
+        people: "2–5 чел",
+        level: "сложный",
+      },
+      {
+        title: "Маньяк",
+        img: "maniac",
+        hit: true,
+        address: "Верхнетецкая, 32",
+        people: "3–6 чел",
+        level: "средний",
+      },
+      {
+        title: "Ритуал",
+        img: "ritual",
+        hit: false,
+        address: "пр. Ленина, 37",
+        people: "3–5 чел",
+        level: "сложный",
+      },
+      {
+        title: "История призраков",
+        img: "ghost",
+        hit: false,
+        address: "Новослободская, 2а",
+        people: "5–6 чел",
+        level: "легкий",
+      },
+      {
+        title: "Тайны старого особняка",
+        img: "mansion",
+        hit: false,
+        address: "пр. Ленина, 37",
+        people: "2–5 чел",
+        level: "легкий",
+      },
+      {
+        title: "Хижина в лесу",
+        img: "house",
+        hit: true,
+        address: "Верхнетецкая, 32",
+        people: "4–7 чел",
+        level: "средний",
+      },
+      {
+        title: "Фатальный эксперимент",
+        img: "experiment",
+        hit: true,
+        address: "Верхнетецкая, 32",
+        people: "5–8 чел",
+        level: "сложный",
+      },
+      {
+        title: "Метро 2033",
+        img: "metro",
+        hit: false,
+        address: "Новослободская, 2а",
+        people: "6 –8 чел",
+        level: "средний",
+      },
+      {
+        title: "Старый чердак",
+        img: "attic",
+        hit: false,
+        address: "Новослободская, 2а",
+        people: "2–3 чел",
+        level: "легкий",
+      },
+      {
+        title: "Последний рубеж",
+        img: "last",
+        hit: false,
+        address: "Верхнетецкая, 32",
+        people: "4–7 чел",
+        level: "средний",
+      },
+      {
+        title: "Марс-2056",
+        img: "mars",
+        hit: false,
+        address: "пр. Ленина, 37",
+        people: "2–4 чел",
+        level: "легкий",
+      },
+
+    ]
+
+  main.quests
+    .container
+      .quests__wrapper
+        span квесты в Новосибирске
+        h1 Выберите тематику
+        .quests__tabs.swiper-container
+          form.swiper-wrapper
+            input(type="radio" name="tab" id="all-tab" checked)
+            label.swiper-slide(for="all-tab")
+              +icon("all-quest", 26, 30)
+              span Все квесты
+            input(type="radio" name="tab" id="adventure-tab")
+            label.swiper-slide(for="adventure-tab")
+              +icon("adventure", 36, 30)
+              span Приключения
+            input(type="radio" name="tab" id="horror-tab")
+            label.swiper-slide(for="horror-tab")
+              +icon("horror", 30, 30)
+              span Ужасы
+            input(type="radio" name="tab" id="mystic-tab")
+            label.swiper-slide(for="mystic-tab")
+              +icon("mystic", 30, 30)
+              span Мистика
+            input(type="radio" name="tab" id="detective-tab")
+            label.swiper-slide(for="detective-tab")
+              +icon("detective", 42, 28)
+              span Детектив
+            input(type="radio" name="tab" id="sci-fi-tab")
+            label.swiper-slide(for="sci-fi-tab")
+              +icon("sci-fi", 28, 30)
+              span Sci-fi
+
+          .quests__list
+            ul
+              each item in list
+                li
+                  a(href="maniac.html")
+                    .quests__img
+                      picture
+                        source(srcset="img/" + item.img + "-min.webp 1x, img/" + item.img + "-min@2x.webp 2x" type="image/webp")
+                        img(src="img/" + item.img + "-min.jpg" srcset="img/" + item.img + "-min@2x.jpg 2x" width="344" height="232" alt= item.title)
+                    .quests__info
+                      h2= item.title
+                      .quests__address
+                        +icon("location", 11, 18)
+                        span= item.address
+                      .quests__amount
+                        +icon("person", 12, 16)
+                        span= item.people
+                        +icon("puzzle", 16, 16)
+                        span= item.level
+                    if(item.hit)
+                      .quests__hit
+                        +icon("star", 12, 12)
+                        span Хит
+
+
+block modals
+  +modal("modal_feedback")
+    +modal-feedback()
+  +modal("modal_location modal_no-scale modal_fit-content")
+    +modal-location()

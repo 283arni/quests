@@ -1,6 +1,104 @@
 .footer {
-  min-height: 100px;
-  padding: 0 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 32px;
+  background: $background-footer;
+  z-index: 20;
 
-  background-color: $color-blue;
+  @include phones {
+    display: none;
+    padding: 16px;
+  }
+
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li:not(:last-of-type) {
+    margin-right: 7px;
+
+    @include phones {
+      margin-right: 15px;
+    }
+  }
+
+  a {
+    display: block;
+    width: 28px;
+    height: 28px;
+    transition: 0.3s;
+
+    &:active {
+      opacity: 0.8;
+    }
+  }
+
+  a[href="https://www.instagram.com/"] {
+    background: no-repeat center url("../img/bg/instagram-default.svg");
+
+    @include phones {
+      background-size: 100%;
+    }
+
+    &:hover {
+      background-image: url("../img/bg/instagram-hover.svg");
+    }
+  }
+
+  a[href="https://www.vk.com/"] {
+    background: no-repeat center url("../img/bg/vk-default.svg");
+
+    @include phones {
+      background-size: 100%;
+    }
+
+    &:hover {
+      background-image: url("../img/bg/vk-hover.svg");
+    }
+  }
+
+  button {
+    font-weight: 500;
+    font-size: 11px;
+    color: $color-light-gray;
+    border: transparent;
+    height: 20px;
+    border-bottom: 1px dashed $color-light-gray;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    transition: 0.2s;
+    letter-spacing: 0.03em;
+
+    @include phones {
+      font-size: 16px;
+      height: 30px;
+    }
+
+    &:hover {
+      color: $color-orange;
+      border-bottom: 1px dashed $color-orange;
+
+      span:first-of-type {
+        display: inline;
+      }
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+
+    span:first-of-type {
+      display: none;
+      margin-right: 5px;
+    }
+  }
 }

@@ -18,28 +18,28 @@
   }
 }
 
-@mixin viewport--md {
-  @media (max-width: $viewport--lg - 1) {
+@mixin desktop {
+  @media (min-width: $desktop) {
     @content;
   }
 }
 
-@mixin viewport--sm {
-  @media (max-width: $viewport--md - 1) {
+@mixin phones {
+  @media (max-width: $phones) {
     @content;
   }
 }
 
 // Mobile first
 
-/* @mixin viewport--md {
-  @media (min-width: $viewport--md) {
+/* @mixin desktop {
+  @media (min-width: $desktop) {
     @content;
   }
 }
 
 @mixin viewport--lg {
-  @media (min-width: $viewport--lg) {
+  @media (min-width: $desktop) {
     @content;
   }
 }

@@ -1,0 +1,83 @@
+.modal__location-content {
+  h2 {
+    font-weight: 800;
+    font-size: 32px;
+    margin: 5px 0 38px 0;
+
+    @include phones {
+      margin-top: 24px;
+    }
+  }
+
+  button {
+    padding: 0;
+    border: transparent;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 45px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+
+    svg {
+      margin-right: 12px;
+    }
+
+    span {
+      font-size: 17px;
+      border-bottom: 1px solid rgba($color-white, 0.5);
+      color: $color-default-white;
+    }
+  }
+
+  a {
+    display: block;
+    font-size: 17px;
+    color: $color-default-white;
+    margin-bottom: 20px;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    font-weight: bold;
+    font-size: 24px;
+    color: $color-white;
+    opacity: 0.5;
+    cursor: pointer;
+    line-height: 120%;
+    margin-bottom: 18px;
+    border-bottom: 2px solid transparent;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  li.active {
+    opacity: 1;
+    border-bottom: 2px solid $color-orange;
+  }
+}

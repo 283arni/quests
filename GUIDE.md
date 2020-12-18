@@ -27,10 +27,10 @@ Webp - создание в source, imagemin - оптимизация в build
 
   //- Инклюд модалки
   +modal("modal--success modal--no-scale modal--fit-content")
-    +modal-success()
+    +modal-location()
 
-  //- Содержимое +modal-success()
-  mixin modal-success()
+  //- Содержимое +modal-location()
+  mixin modal-location()
     p.modal__description Содержимое модалки
 ```
 

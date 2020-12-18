@@ -1,0 +1,308 @@
+.table {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background:$color-black no-repeat right 30%/100% url("../img/maniac-min.jpg");
+
+  @include phones {
+    padding: 88px 0 160px 0;
+    background: $background-maniac, $color-black no-repeat center/cover url("../img/maniac-min.jpg");
+  }
+}
+
+.table__overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba($color-black, 0.8);
+  backdrop-filter: blur(40px);
+  z-index: 5;
+
+  @include phones {
+    padding: 88px 0 160px 0;
+    background: rgba($color-black, 0.2);
+  }
+}
+
+.table__wrapper {
+  position: relative;
+  z-index: 10;
+
+  a[href="maniac.html"] {
+    display: none;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    color: $color-light-gray;
+    background: no-repeat left 40% url("../img/bg/arrow.svg");
+    text-transform: uppercase;
+    padding-left: 15px;
+    line-height: 20px;
+    vertical-align: middle;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+
+
+    @include phones {
+      display: inline-block;
+      margin-bottom: 30px;
+    }
+  }
+
+  button {
+    font-weight: 500;
+    font-size: 15px;
+    border: transparent;
+    border-bottom: 2px solid $color-orange;
+    background: transparent;
+    color: $color-white;
+    padding: 0 0 8px 0;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+}
+
+
+.table__subtitle {
+  margin: 0 0 20px 6px;
+
+  @include phones {
+    margin: 0 0 18px 0;
+  }
+
+  span {
+    display: none;
+    letter-spacing: 0.03em;
+    font-weight: 500;
+    font-size: 13px;
+    color: $color-orange;
+
+    &:first-of-type {
+      @include phones {
+        display: inline;
+      }
+    }
+
+    &:last-of-type {
+      display: inline;
+
+      @include phones {
+        display: none;
+      }
+    }
+  }
+}
+
+.table__title {
+  border-bottom: 1px solid rgba($color-light-gray, 0.3);
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 22px;
+
+  @include phones {
+    padding-bottom: 18px;
+  }
+
+  h1 {
+    font-weight: 900;
+    font-size: 91px;
+    letter-spacing: -0.03em;
+    color: $color-white;
+    text-transform: uppercase;
+    line-height: 78%;
+    margin: 0 84px 0 0;
+
+    @include phones {
+      font-size: 42px;
+      letter-spacing: normal;
+    }
+  }
+
+  button {
+    display: none;
+
+    @include phones {
+      position: absolute;
+      bottom: -70px;
+    }
+  }
+}
+
+.table__info {
+  display: none;
+  flex-direction: column;
+  font-weight: 500;
+  font-size: 14px;
+  margin-right: 100px;
+
+  @include phones {
+    position: absolute;
+    bottom: -15px;
+    display: block;
+    margin-right: 0;
+    width: 260px;
+    line-height: 150%;
+  }
+
+
+  span {
+    letter-spacing: 0.04em;
+
+    &:not(:last-of-type) {
+      padding-bottom: 7px;
+    }
+  }
+}
+
+.table__block {
+  padding: 38px 46px;
+  width: 90%;
+  min-height: 383px;
+
+  @include phones {
+    width: 100%;
+    padding: 35px 0;
+  }
+}
+
+
+.table__date {
+  display: flex;
+  margin-bottom: 28px;
+  min-height: 32px;
+
+  @include phones {
+    margin-bottom: 25px;
+  }
+
+  button {
+    margin-right: 26px;
+
+    @include phones {
+      margin-right: 18px;
+    }
+  }
+
+
+  > span {
+    display: none;
+    font-weight: 800;
+    font-size: 28px;
+  }
+}
+
+
+.table__samples {
+  display: none;
+  align-items: center;
+  margin-bottom: 50px;
+
+  div {
+    width: 15px;
+    height: 15px;
+    border-radius: 3px;
+    margin-right: 5px;
+  }
+
+  span {
+    font-weight: 500;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: middle;
+
+    &:not(:last-of-type) {
+      margin-right: 24px;
+    }
+  }
+}
+
+
+.table__samples-free {
+  border: 2px solid $color-gray-table;
+}
+
+.table__samples-reserved {
+  border: 2px solid transparent;
+  background: $background-reserved;
+}
+
+.table__samples-check {
+  border: 2px solid transparent;
+  background: $background-check;
+}
+
+.table__times {
+  display: none;
+}
+
+.table__time {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 28px 35px 0;
+
+  @include phones {
+    margin-right: 22px;
+  }
+
+  input {
+    display: none;
+
+    &:checked + label {
+      border-color: transparent;
+      background: $background-check;
+    }
+  }
+
+  > span {
+    font-weight: 500;
+    font-size: 12px;
+  }
+
+  label {
+    display: inline-flex;
+    border: 2px solid $color-gray-table;
+    border-radius: 65px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    width: 110px;
+    height: 38px;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      font-weight: bold;
+      font-size: 16px;
+    }
+  }
+
+  .table__time-reserved {
+    border-color: transparent;
+    background: $background-reserved;
+  }
+
+  label:not(.table__time-reserved) {
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+}

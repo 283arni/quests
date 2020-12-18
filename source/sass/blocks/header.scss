@@ -1,36 +1,270 @@
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 39px 24px 32px;
+  z-index: 20;
+
+  @include phones {
+    padding: 20px 16px 20px 16px;
+  }
+}
+
+.header__wrapper {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  min-height: 100px;
-  padding: 0 40px;
 
-  background-color: $color-blue;
-
-  &__wrapper {
-    display: flex;
-    align-items: center;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
-  a,
-  p {
-    color: $color-white;
+  a {
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    color: $color-default-white;
+  }
+
+  a[href="index.html"] {
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+
+  input {
+    display: none;
+
+    &:checked ~ .header__container {
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      background: $mobil-menu;
+      min-height: 640px;
+      z-index: 40;
+
+      .footer {
+        display: flex;
+        order: 4;
+      }
+    }
+
+    &:checked ~ label {
+      z-index: 50;
+
+      span {
+        top: 5px;
+        transform: rotate(45deg);
+
+        &::after {
+          top: 0;
+          transform: rotate(0);
+        }
+
+        &::before {
+          top: 0;
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+
+  label {
+    display: none;
+    align-items: center;
+
+    @include phones {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 75px;
+      height: 17px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+
+    span {
+      width: 16px;
+      top: 7px;
+
+      right: 4px;
+
+      &::after {
+        content: "";
+        top: 6px;
+        width: 20px;
+      }
+
+      &::before {
+        content: "";
+        bottom: 6px;
+        width: 20px;
+      }
+    }
+
+    span,
+    span::after,
+    span::before {
+      @include phones {
+        display: block;
+        position: absolute;
+        height: 2px;
+        background: $color-default-white;
+      }
+    }
+  }
+
+  .header__container {
+    @include phones {
+      display: none;
+      padding-top: 98px;
+      align-items: center;
+    }
+  }
+}
+
+.header__logo {
+  @include phones {
+    z-index: 50;
+  }
+
+  svg {
+    @include phones {
+      width: 96px;
+      height: 36px;
+    }
+  }
+}
+
+.header__container {
+  display: flex;
+  margin-bottom: 5px;
+
+  > button {
+    border: transparent;
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-left: 88px;
+    padding: 0;
+    border-bottom: 1px dashed transparent;
+
+    @include phones {
+      order: 1;
+      margin: 0 0 14px 0;
+    }
+
+    &:hover {
+      span {
+        border-bottom: 1px dashed $color-orange;
+      }
+    }
+
+    &:active {
+      opacity: 0.8;
+    }
+
+    svg {
+      margin-right: 8px;
+    }
+
+    span {
+      font-weight: bold;
+      font-size: 12px;
+      color: $color-orange;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+  }
+
+  a[href^="tel"] {
+    margin-left: 23px;
+    letter-spacing: 0.09em;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+
+    @include phones {
+      order: 2;
+      margin: 0 0 37px 0;
+    }
+  }
+
+  .footer {
+    display: none;
+
+    a {
+      @include phones {
+        width: 36px;
+        height: 36px;
+      }
+    }
+  }
+}
+
+.header__nav {
+  @include phones {
+    order: 3;
+    width: 100%;
+    padding: 0 16px;
   }
 
   ul {
     display: flex;
-    margin: 0;
-    margin-right: 20px;
-    margin-left: 60px;
-    padding: 0;
 
-    list-style: none;
-
-    li {
-      margin-right: 20px;
+    @include phones {
+      flex-direction: column;
+      align-items: center;
+      border-top: 1px solid rgba($color-white, 0.5);
     }
   }
 
-  .main-nav__toggle {
-    display: none;
+  li {
+    margin: 0 25px;
+
+    @include phones {
+      margin: 35px 0 0 0;
+    }
+  }
+
+  a {
+    text-transform: uppercase;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+
+    @include phones {
+      font-size: 16px;
+    }
+  }
+
+  a.active {
+    color: $color-orange;
   }
 }

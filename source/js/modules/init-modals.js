@@ -1,10 +1,10 @@
 import {setupModal} from '../utils/modal';
 
 const modals = document.querySelectorAll('.modal');
-const modalFeedback = document.querySelector('.modal--feedback');
+const modalFeedback = document.querySelector('.modal_feedback');
 const modalFeedbackBtns = document.querySelectorAll('[data-modal="feedback"]');
-const modalSuccess = document.querySelector('.modal--success');
-const modalSuccessBtns = document.querySelectorAll('[data-modal="success"]');
+const modalSuccess = document.querySelector('.modal_location');
+const modalSuccessBtns = document.querySelectorAll('[data-modal="location"]');
 
 // аргументы setupModal(modal, closeCallback, modalBtns, openCallback, noPrevDefault, preventScrollLock)
 // возможна инициализация только с первыми аргументом,
@@ -15,7 +15,7 @@ const initModals = () => {
     if (modals.length) {
       modals.forEach((el) => {
         setTimeout(() => {
-          el.classList.remove('modal--preload');
+          el.classList.remove('modal_preload');
         }, 100);
       });
     }

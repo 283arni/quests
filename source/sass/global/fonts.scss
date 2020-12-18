@@ -1,7 +1,8 @@
 @font-face {
   font-family: "raleway";
-  src: url("../fonts/subset-raleway-bold.woff2") format("woff2"),
-  url("../fonts/subset-raleway-bold.woff") format("woff");
+  src: local("Raleway"),
+    url("../fonts/subset-raleway-bold.woff2") format("woff2"),
+    url("../fonts/subset-raleway-bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -9,8 +10,9 @@
 
 @font-face {
   font-family: "raleway";
-  src: url("../fonts/subset-raleway-medium.woff2") format("woff2"),
-  url("../fonts/subset-raleway-medium.woff") format("woff");
+  src: local("Raleway"),
+    url("../fonts/subset-raleway-medium.woff2") format("woff2"),
+    url("../fonts/subset-raleway-medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -18,8 +20,9 @@
 
 @font-face {
   font-family: "raleway";
-  src: url("../fonts/subset-raleway-extrabold.woff2") format("woff2"),
-  url("../fonts/subset-raleway-extrabold.woff") format("woff");
+  src: local("Raleway"),
+    url("../fonts/subset-raleway-extrabold.woff2") format("woff2"),
+    url("../fonts/subset-raleway-extrabold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
   font-display: swap;
@@ -27,8 +30,9 @@
 
 @font-face {
   font-family: "raleway";
-  src: url("../fonts/subset-raleway-regular.woff2") format("woff2"),
-  url("../fonts/subset-raleway-regular.woff") format("woff");
+  src: local("Raleway"),
+    url("../fonts/subset-raleway-regular.woff2") format("woff2"),
+    url("../fonts/subset-raleway-regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -36,8 +40,9 @@
 
 @font-face {
   font-family: "raleway";
-  src: url("../fonts/subset-raleway-black.woff2") format("woff2"),
-  url("../fonts/subset-raleway-black.woff") format("woff");
+  src: local("Raleway"),
+    url("../fonts/subset-raleway-black.woff2") format("woff2"),
+    url("../fonts/subset-raleway-black.woff") format("woff");
   font-weight: 900;
   font-style: normal;
   font-display: swap;
@@ -45,8 +50,9 @@
 
 @font-face {
   font-family: "raleway";
-  src: url("../fonts/subset-raleway-semibold.woff2") format("woff2"),
-  url("../fonts/subset-raleway-semibold.woff") format("woff");
+  src: local("Raleway"),
+    url("../fonts/subset-raleway-semibold.woff2") format("woff2"),
+    url("../fonts/subset-raleway-semibold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
   font-display: swap;

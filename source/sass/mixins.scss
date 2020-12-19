@@ -4,8 +4,6 @@
   }
 }
 
-// Desktop first
-
 @mixin tablets {
   @media (max-width: $tablets) {
     @content;
@@ -17,29 +15,3 @@
     @content;
   }
 }
-
-// Mobile first
-
-/* @mixin desktop {
-  @media (min-width: $desktop) {
-    @content;
-  }
-}
-
-@mixin viewport--lg {
-  @media (min-width: $desktop) {
-    @content;
-  }
-}
-
-@mixin viewport--xl {
-  @media (min-width: $viewport--xl) {
-    @content;
-  }
-}
-
-@mixin viewport--xxl {
-  @media (min-width: $viewport--xxl) {
-    @content;
-  }
-} */

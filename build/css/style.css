@@ -308,29 +308,6 @@ template {
 [hidden] {
   display: none; }
 
-/* @mixin desktop {
-  @media (min-width: $desktop) {
-    @content;
-  }
-}
-
-@mixin viewport--lg {
-  @media (min-width: $desktop) {
-    @content;
-  }
-}
-
-@mixin viewport--xl {
-  @media (min-width: $viewport--xl) {
-    @content;
-  }
-}
-
-@mixin viewport--xxl {
-  @media (min-width: $viewport--xxl) {
-    @content;
-  }
-} */
 @font-face {
   font-family: "raleway";
   src: local("Raleway"), url("../fonts/subset-raleway-bold.woff2") format("woff2"), url("../fonts/subset-raleway-bold.woff") format("woff");
@@ -1982,10 +1959,3 @@ button,
     opacity: 0.8; }
   .table__time label:not(.table__time-reserved):active {
     opacity: 0.6; }
-
-/* @media (hover: hover), screen and (min-width: 0\0) {
-  &:hover,
-  &:focus {
-    color: red;
-  }
-} */

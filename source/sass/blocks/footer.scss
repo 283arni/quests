@@ -1,3 +1,11 @@
 .footer {
-  max-height: 76px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-height: 76px;
+}
+
+.footer_quests {
+  background: $background-footer;
 }

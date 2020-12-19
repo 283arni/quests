@@ -8,9 +8,9 @@
   //  padding: 0 136px;;
   //}
 
-  //@include desktop {
-  //  padding: 0 24px;
-  //}
+  @include tablets {
+    padding: 0 32px;
+  }
 
   @include phones {
     padding: 0 16px;

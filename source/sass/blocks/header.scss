@@ -54,7 +54,7 @@
       min-height: 640px;
       z-index: 40;
 
-      .footer {
+      .bottom {
         display: flex;
         order: 4;
       }
@@ -83,6 +83,7 @@
   label {
     display: none;
     align-items: center;
+
 
     @include phones {
       position: relative;
@@ -144,7 +145,7 @@
   }
 
   svg {
-    @include phones {
+    @include tablets {
       width: 96px;
       height: 36px;
     }
@@ -153,6 +154,7 @@
 
 .header__container {
   display: flex;
+  align-items: center;
   margin-bottom: 5px;
 
   > button {
@@ -164,6 +166,10 @@
     margin-left: 88px;
     padding: 0;
     border-bottom: 1px dashed transparent;
+
+    @include tablets {
+      margin-left: 20px;
+    }
 
     @include phones {
       order: 1;
@@ -196,6 +202,7 @@
   a[href^="tel"] {
     margin-left: 23px;
     letter-spacing: 0.09em;
+    white-space: nowrap;
 
     &:hover {
       opacity: 0.8;
@@ -205,20 +212,16 @@
       opacity: 0.5;
     }
 
+    @include tablets {
+      font-size: 11px;
+      letter-spacing: normal;
+      margin-left: 10px;
+    }
+
     @include phones {
+      font-size: 13px;
       order: 2;
       margin: 0 0 37px 0;
-    }
-  }
-
-  .footer {
-    display: none;
-
-    a {
-      @include phones {
-        width: 36px;
-        height: 36px;
-      }
     }
   }
 }
@@ -232,6 +235,7 @@
 
   ul {
     display: flex;
+    flex-wrap: wrap;
 
     @include phones {
       flex-direction: column;
@@ -242,6 +246,10 @@
 
   li {
     margin: 0 25px;
+
+    @include tablets {
+      margin: 0 10px;
+    }
 
     @include phones {
       margin: 35px 0 0 0;
@@ -259,6 +267,10 @@
       opacity: 0.5;
     }
 
+    @include tablets {
+      font-size: 10px;
+    }
+
     @include phones {
       font-size: 16px;
     }
@@ -266,5 +278,16 @@
 
   a.active {
     color: $color-orange;
+  }
+}
+
+.bottom {
+  display: none;
+
+  a {
+    @include phones {
+      width: 36px;
+      height: 36px;
+    }
   }
 }

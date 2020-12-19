@@ -9,7 +9,7 @@
 }
 
 .quests__wrapper {
-  span {
+  > span {
     display: inline-block;
     vertical-align: middle;
     font-weight: 500;
@@ -41,14 +41,19 @@
   position: relative;
 
   &::after {
-    @include phones {
+    @include tablets {
       position: absolute;
       top: 0;
-      right: -16px;
-      height: 30px;
+      right: -32px;
+      height: 40px;
       width: 30%;
       content: "";
       background: $background-tabs;
+    }
+
+    @include phones {
+      right: -16px;
+      height: 30px;
     }
   }
 
@@ -187,7 +192,12 @@
     margin: 0;
     list-style: none;
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
+
+    @include phones {
+      justify-content: center;
+    }
   }
 
   li {
@@ -196,18 +206,9 @@
     position: relative;
     margin: 0 0 32px 0;
 
-
     @include phones {
       width: 328px;
       margin: 0 0 16px 0;
-    }
-
-    &:not(:nth-child(3n)) {
-      margin-right: 24px;
-
-      @include phones {
-        margin-right: 0;
-      }
     }
   }
 

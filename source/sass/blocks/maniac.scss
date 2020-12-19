@@ -6,7 +6,7 @@
   @include phones {
     padding-top: 88px;
     align-items: flex-end;
-    background: $background-maniac, $color-black no-repeat center center/ 250% url("../img/maniac-min.jpg");
+    background: $background-maniac, $color-black no-repeat center 30%/ 250% url("../img/maniac-min.jpg");
   }
 }
 
@@ -17,7 +17,7 @@
   justify-content: center;
   margin-left: 42.5%;
 
-  @include phones {
+  @include tablets {
     margin-left: 0;
   }
 
@@ -70,7 +70,7 @@
 .maniac__description {
   padding-left: 30px;
 
-  @include phones {
+  @include tablets {
     padding-left: 0;
   }
 

@@ -1,3 +1,5 @@
+include bottom
+
 mixin header(headerMod, currentPage)
   -
     var headerLinks = [
@@ -20,7 +22,7 @@ mixin header(headerMod, currentPage)
       {
         href: "#",
         text: "контакты"
-      },
+      }
     ]
 
   header(class=(headerMod) ? "header header_" + headerMod: "header")
@@ -54,4 +56,5 @@ mixin header(headerMod, currentPage)
           span новосибирск
         a(href="tel:+73832840160") 8 (383) 284 01 60
 
-        +footer
+
+        +bottom

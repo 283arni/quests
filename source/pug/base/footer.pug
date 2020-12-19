@@ -1,11 +1,5 @@
+include bottom
+
 mixin footer(footerMod)
-  - var socials = ["instagram", "vk"]
   footer(class= (footerMod) ? "footer footer_" + footerMod: "footer")
-    .footer__social
-      ul
-        each social in socials
-          li
-            a(href="https://www." + social + ".com/", aria-label="Сайт " + social)
-    button(type="button" data-modal="feedback")
-      span ?
-      span Задать вопрос
+    +bottom

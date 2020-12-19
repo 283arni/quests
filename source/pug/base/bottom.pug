@@ -1,0 +1,11 @@
+mixin bottom
+  - var socials = ["instagram", "vk"]
+  .bottom
+    .bottom__social
+      ul
+        each social in socials
+          li
+            a(href="https://www." + social + ".com/", aria-label="Сайт " + social)
+    button(type="button" data-modal="feedback")
+      span ?
+      span Задать вопрос

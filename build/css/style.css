@@ -791,15 +791,20 @@ button,
   left: 0;
   right: 0;
   min-height: 76px; }
+  .footer .bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; }
+    @media (max-width: 767px) {
+      .footer .bottom {
+        display: none; } }
 
 .footer_quests {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(19, 18, 18, 0)), to(#131212));
   background: linear-gradient(180deg, rgba(19, 18, 18, 0) 0%, #131212 100%); }
 
 .bottom {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1085,13 +1090,14 @@ button,
     border-radius: 30px;
     margin: 0 auto 23px auto;
     display: block;
-    cursor: pointer;
     -webkit-transition: 0.3s;
     transition: 0.3s; }
     .modal__feedback-content button:not(:disabled):hover {
-      opacity: 0.8; }
+      cursor: pointer;
+      background: #f39425; }
     .modal__feedback-content button:not(:disabled):active {
-      opacity: 0.5; }
+      cursor: pointer;
+      opacity: 0.8; }
     .modal__feedback-content button:disabled {
       background: #b8b8b8; }
   .modal__feedback-content input[type="text"],
@@ -1107,6 +1113,12 @@ button,
     width: 96%;
     cursor: pointer;
     resize: vertical; }
+    .modal__feedback-content input[type="text"]:hover, .modal__feedback-content input[type="text"]:focus,
+    .modal__feedback-content input[type="email"]:hover,
+    .modal__feedback-content input[type="email"]:focus,
+    .modal__feedback-content textarea:hover,
+    .modal__feedback-content textarea:focus {
+      opacity: 0.5; }
     @media (max-width: 767px) {
       .modal__feedback-content input[type="text"],
       .modal__feedback-content input[type="email"],
@@ -1198,6 +1210,8 @@ button,
     cursor: pointer;
     margin-right: 8px;
     opacity: 0.5; }
+    .modal__check label:hover {
+      opacity: 0.3; }
   .modal__check p {
     font-size: 14px;
     margin: 0 0 5px 0;
@@ -1205,6 +1219,10 @@ button,
   .modal__check a {
     color: #f0f0f0;
     text-decoration: underline; }
+    .modal__check a:hover {
+      opacity: 0.8; }
+    .modal__check a:active {
+      opacity: 0.5; }
   .modal__check span {
     display: none;
     position: absolute;

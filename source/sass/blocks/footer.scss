@@ -4,6 +4,14 @@
   left: 0;
   right: 0;
   min-height: 76px;
+
+  .bottom {
+    display: flex;
+
+    @include phones {
+      display: none;
+    }
+  }
 }
 
 .footer_quests {

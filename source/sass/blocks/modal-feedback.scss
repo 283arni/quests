@@ -27,16 +27,17 @@
     border-radius: 30px;
     margin: 0 auto 23px auto;
     display: block;
-    cursor: pointer;
     transition: 0.3s;
 
 
     &:not(:disabled):hover {
-      opacity: 0.8;
+      cursor: pointer;
+      background: $color-orange-hover;
     }
 
     &:not(:disabled):active {
-      opacity: 0.5;
+      cursor: pointer;
+      opacity: 0.8;
     }
 
     &:disabled {
@@ -58,6 +59,11 @@
     width: 96%;
     cursor: pointer;
     resize: vertical;
+
+    &:hover,
+    &:focus {
+      opacity: 0.5;
+    }
 
     @include phones {
       width: 97%;
@@ -164,6 +170,10 @@
     cursor: pointer;
     margin-right: 8px;
     opacity: 0.5;
+
+    &:hover {
+      opacity: 0.3;
+    }
   }
 
   p {
@@ -175,6 +185,14 @@
   a {
     color: $color-default-white;
     text-decoration: underline;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
   }
 
   span {

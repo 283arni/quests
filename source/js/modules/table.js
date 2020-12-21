@@ -25,8 +25,14 @@ export default (function () {
     labelCheck.addEventListener('click', () => {
 
       if (!labelCheck.control.disabled) {
-        info.style.display = 'flex';
         paymentBtn.style.display = 'inline-block';
+
+        if (document.documentElement.clientWidth > 360) {
+          info.style.display = 'flex';
+          return;
+        }
+
+        info.style.display = 'inline-block';
       }
     });
 

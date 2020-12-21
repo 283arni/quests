@@ -174,7 +174,7 @@
 
     @include phones {
       order: 1;
-      margin: 0 0 14px 0;
+      margin: 0 0 16px 0;
     }
 
     &:hover {
@@ -220,9 +220,10 @@
     }
 
     @include phones {
-      font-size: 13px;
+      font-size: 14px;
       order: 2;
-      margin: 0 0 37px 0;
+      margin: 0 0 41px 0;
+      letter-spacing: 0.04em;
     }
   }
 }
@@ -253,7 +254,7 @@
     }
 
     @include phones {
-      margin: 35px 0 0 0;
+      margin: 41px 0 0 0;
     }
   }
 
@@ -284,11 +285,4 @@
 
 .bottom {
   display: none;
-
-  a {
-    @include phones {
-      width: 36px;
-      height: 36px;
-    }
-  }
 }

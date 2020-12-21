@@ -440,8 +440,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       var labelCheck = _step.value;
       labelCheck.addEventListener('click', function () {
         if (!labelCheck.control.disabled) {
-          info.style.display = 'flex';
           paymentBtn.style.display = 'inline-block';
+
+          if (document.documentElement.clientWidth > 360) {
+            info.style.display = 'flex';
+            return;
+          }
+
+          info.style.display = 'inline-block';
         }
       });
       labelCheck.addEventListener('keydown', function (e) {

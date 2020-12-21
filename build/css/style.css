@@ -697,7 +697,7 @@ button,
         -webkit-box-ordinal-group: 2;
             -ms-flex-order: 1;
                 order: 1;
-        margin: 0 0 14px 0; } }
+        margin: 0 0 16px 0; } }
     .header__container > button:hover span {
       border-bottom: 1px dashed #f2890f; }
     .header__container > button:active {
@@ -725,11 +725,12 @@ button,
         margin-left: 10px; } }
     @media (max-width: 767px) {
       .header__container a[href^="tel"] {
-        font-size: 13px;
+        font-size: 14px;
         -webkit-box-ordinal-group: 3;
             -ms-flex-order: 2;
                 order: 2;
-        margin: 0 0 37px 0; } }
+        margin: 0 0 41px 0;
+        letter-spacing: 0.04em; } }
 
 @media (max-width: 767px) {
   .header__nav {
@@ -763,7 +764,7 @@ button,
       margin: 0 10px; } }
   @media (max-width: 767px) {
     .header__nav li {
-      margin: 35px 0 0 0; } }
+      margin: 41px 0 0 0; } }
 
 .header__nav a {
   text-transform: uppercase; }
@@ -783,10 +784,6 @@ button,
 
 .bottom {
   display: none; }
-  @media (max-width: 767px) {
-    .bottom a {
-      width: 36px;
-      height: 36px; } }
 
 .footer {
   position: fixed;
@@ -837,6 +834,10 @@ button,
     height: 28px;
     -webkit-transition: 0.3s;
     transition: 0.3s; }
+    @media (max-width: 767px) {
+      .bottom a {
+        width: 36px;
+        height: 36px; } }
     .bottom a:active {
       opacity: 0.8; }
   .bottom a[href="https://www.instagram.com/"] {
@@ -868,8 +869,9 @@ button,
     letter-spacing: 0.03em; }
     @media (max-width: 767px) {
       .bottom button {
-        font-size: 16px;
-        height: 30px; } }
+        font-size: 15px;
+        height: 22px;
+        letter-spacing: 0.07em; } }
     .bottom button:hover {
       color: #f2890f;
       border-bottom: 1px dashed #f2890f; }
@@ -989,10 +991,10 @@ button,
 .modal__location-content h2 {
   font-weight: 800;
   font-size: 32px;
-  margin: 5px 0 38px 0; }
+  margin: 0 0 33px 0; }
   @media (max-width: 767px) {
     .modal__location-content h2 {
-      margin-top: 24px; } }
+      margin-top: 18px; } }
 
 .modal__location-content button {
   padding: 0;
@@ -1018,10 +1020,11 @@ button,
     color: #f0f0f0; }
 
 .modal__location-content a {
-  display: block;
+  display: inline-block;
+  vertical-align: middle;
   font-size: 17px;
   color: #f0f0f0;
-  margin-bottom: 20px; }
+  margin-bottom: 22px; }
   .modal__location-content a:hover {
     opacity: 0.8; }
   .modal__location-content a:active {
@@ -1049,7 +1052,7 @@ button,
   opacity: 0.5;
   cursor: pointer;
   line-height: 120%;
-  margin-bottom: 18px;
+  margin-bottom: 19px;
   border-bottom: 2px solid transparent; }
   .modal__location-content li:hover {
     opacity: 1; }
@@ -1066,10 +1069,10 @@ button,
   .modal__feedback-content h2 {
     font-weight: 800;
     font-size: 32px;
-    margin: 10px 0 45px 0; }
+    margin: 3px 0 45px 0; }
     @media (max-width: 767px) {
       .modal__feedback-content h2 {
-        margin-top: 25px; } }
+        margin: 18px 0 40px 0; } }
   .modal__feedback-content button {
     background: #f2890f;
     border: transparent;
@@ -1113,15 +1116,20 @@ button,
 .modal__name,
 .modal__mail {
   position: relative;
-  margin-bottom: 30px; }
+  margin-bottom: 37px; }
+  @media (max-width: 767px) {
+    .modal__name,
+    .modal__mail {
+      margin-bottom: 33px; } }
   .modal__name div,
   .modal__mail div {
     font-weight: 500;
     font-size: 15px;
-    margin-bottom: 14px; }
+    margin-bottom: 15px; }
     @media (max-width: 767px) {
       .modal__name div,
       .modal__mail div {
+        margin-bottom: 13px;
         font-size: 14px;
         width: 90%;
         line-height: 170%; } }
@@ -1160,11 +1168,14 @@ button,
 
 .modal__text {
   margin-bottom: 25px; }
+  @media (max-width: 767px) {
+    .modal__text {
+      margin-bottom: 29px; } }
   .modal__text label {
     display: block;
     font-weight: 500;
     font-size: 15px;
-    margin-bottom: 13px; }
+    margin-bottom: 15px; }
   .modal__text textarea {
     min-height: 120px; }
 
@@ -1251,7 +1262,8 @@ button,
     @media (max-width: 767px) {
       .main__wrapper h1 {
         font-size: 36px;
-        margin-bottom: 35px; } }
+        width: 90%;
+        margin: 0 auto 35px auto; } }
   .main__wrapper p {
     font-weight: 500;
     font-size: 17px;
@@ -1269,7 +1281,7 @@ button,
     font-size: 17px;
     text-transform: uppercase;
     color: #ffffff;
-    padding: 21px 52px;
+    padding: 23px 52px;
     letter-spacing: 0.03em;
     border: transparent;
     -webkit-transition: 0.3s;
@@ -1286,33 +1298,39 @@ button,
 .quests {
   background: -webkit-gradient(linear, left bottom, left top, from(#141414), to(#1f1d1d));
   background: linear-gradient(0deg, #141414 0%, #1f1d1d 100%);
-  padding: 120px 0; }
+  padding: 123px 0; }
   @media (max-width: 767px) {
     .quests {
-      padding-top: 85px; } }
+      padding-top: 90px; } }
 
-.quests__wrapper > span {
-  display: inline-block;
-  vertical-align: middle;
-  font-weight: 500;
-  font-size: 14px;
-  color: #f2890f;
-  margin-bottom: 2px; }
-  @media (max-width: 767px) {
-    .quests__wrapper > span {
-      margin-bottom: 8px; } }
-
-.quests__wrapper h1 {
-  font-weight: 800;
-  font-size: 64px;
-  margin: 0 0 46px 0;
-  line-height: normal;
-  color: #ffffff; }
-  @media (max-width: 767px) {
-    .quests__wrapper h1 {
-      font-size: 36px;
-      line-height: 110%;
-      margin-bottom: 44px; } }
+.quests__wrapper {
+  width: 99%; }
+  @media (max-width: 1023px) {
+    .quests__wrapper {
+      width: 100%; } }
+  .quests__wrapper > span {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    color: #f2890f;
+    margin-bottom: 8px; }
+    @media (max-width: 767px) {
+      .quests__wrapper > span {
+        margin-bottom: 13px; } }
+  .quests__wrapper h1 {
+    font-weight: 800;
+    font-size: 64px;
+    margin: 0 0 46px 0;
+    line-height: normal;
+    color: #ffffff;
+    letter-spacing: -0.01em; }
+    @media (max-width: 767px) {
+      .quests__wrapper h1 {
+        font-size: 36px;
+        line-height: 110%;
+        margin-bottom: 44px; } }
 
 .quests__tabs {
   position: relative; }
@@ -1352,7 +1370,7 @@ button,
         .quests__tabs label:first-of-type {
           padding-right: 14px; } }
     .quests__tabs label:not(:first-of-type) {
-      padding: 0 37px 0 38px; }
+      padding: 0 37px 0 41px; }
       @media (max-width: 767px) {
         .quests__tabs label:not(:first-of-type) {
           padding: 0 14px 0 18px; } }
@@ -1367,7 +1385,8 @@ button,
       letter-spacing: -0.02em;
       border-bottom: 2px solid transparent;
       color: #e6e6e6;
-      white-space: nowrap; }
+      white-space: nowrap;
+      padding: 6px 0; }
       @media (max-width: 767px) {
         .quests__tabs label span {
           font-size: 13px;
@@ -1467,7 +1486,7 @@ button,
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  padding: 20px;
+  padding: 18px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -1477,7 +1496,7 @@ button,
     font-weight: bold;
     font-size: 24px;
     color: #ffffff;
-    margin: 0 0 10px 0;
+    margin: 0 0 12px 0;
     line-height: 120%;
     width: 90%; }
   .quests__info a,
@@ -1493,7 +1512,9 @@ button,
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 2px; }
+  margin-bottom: 4px; }
+  .quests__address span {
+    letter-spacing: 0.03em; }
   .quests__address svg {
     margin-right: 10px; }
 
@@ -1524,9 +1545,13 @@ button,
           align-items: center;
   border-radius: 20px;
   border: 2px solid rgba(242, 137, 15, 0.7);
-  top: 15px;
-  right: 16px;
+  top: 17px;
+  right: 18px;
   padding: 6px 13px; }
+  @media (max-width: 767px) {
+    .quests__hit {
+      top: 15px;
+      right: 15px; } }
   .quests__hit svg {
     margin-right: 4px; }
   .quests__hit span {

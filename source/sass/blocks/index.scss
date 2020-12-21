@@ -39,7 +39,8 @@
 
     @include phones {
       font-size: 36px;
-      margin-bottom: 35px;
+      width: 90%;
+      margin: 0 auto 35px auto;
     }
   }
 
@@ -63,7 +64,7 @@
     font-size: 17px;
     text-transform: uppercase;
     color: $color-white;
-    padding: 21px 52px;
+    padding: 23px 52px;
     letter-spacing: 0.03em;
     border: transparent;
     transition: 0.3s;

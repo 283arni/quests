@@ -35,6 +35,11 @@
     height: 28px;
     transition: 0.3s;
 
+    @include phones {
+      width: 36px;
+      height: 36px;
+    }
+
     &:active {
       opacity: 0.8;
     }
@@ -78,8 +83,9 @@
     letter-spacing: 0.03em;
 
     @include phones {
-      font-size: 16px;
-      height: 30px;
+      font-size: 15px;
+      height: 22px;
+      letter-spacing: 0.07em;
     }
 
     &:hover {

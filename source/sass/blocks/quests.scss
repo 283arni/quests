@@ -7,6 +7,18 @@
   @include phones {
     padding-top: 90px;
   }
+
+  .container {
+    padding-right: 125px;
+
+    @include tablets {
+      padding-right: 32px;
+    }
+
+    @include phones {
+      padding-right: 16px;
+    }
+  }
 }
 
 .quests__wrapper {
@@ -66,9 +78,10 @@
 
   form {
     display: flex;
+
     flex-wrap: wrap;
 
-    @include phones {
+    @include tablets {
       flex-wrap: nowrap;
     }
   }
@@ -76,25 +89,27 @@
   label {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     height: 40px;
     cursor: pointer;
 
-    @include phones {
+    @include tablets {
+      width: auto;
       height: 30px;
     }
 
     &:first-of-type {
-      padding-right: 40px;
+      padding-right: 5px;
+      justify-content: flex-start;
 
-      @include phones {
+      @include tablets {
         padding-right: 14px;
       }
     }
 
     &:not(:first-of-type) {
-      padding: 0 37px 0 41px;
 
-      @include phones {
+      @include tablets {
         padding: 0 14px 0 18px;
       }
     }
@@ -129,17 +144,33 @@
   }
 
   label[for="all-tab"] {
+    min-width: 14%;
+
+    @include tablets {
+      width: auto;
+      min-width: auto;
+    }
+
     svg {
-      @include phones {
+      min-width: 21px;
+
+      @include tablets {
         min-width: 21px;
+        width: 21px;
         height: 24px;
       }
     }
   }
 
   label[for="adventure-tab"] {
+    width: 20.2%;
+
+    @include tablets {
+      width: auto;
+    }
+
     svg {
-      @include phones {
+      @include tablets {
         width: 29px;
         height: 24px;
       }
@@ -147,8 +178,14 @@
   }
 
   label[for="horror-tab"] {
+    width: 15.2%;
+
+    @include tablets {
+      width: auto;
+    }
+
     svg {
-      @include phones {
+      @include tablets {
         width: 22px;
         height: 24px;
       }
@@ -156,8 +193,14 @@
   }
 
   label[for="mystic-tab"] {
+    width: 16.5%;
+
+    @include tablets {
+      width: auto;
+    }
+
     svg {
-      @include phones {
+      @include tablets {
         width: 22px;
         height: 24px;
       }
@@ -165,8 +208,14 @@
   }
 
   label[for="detective-tab"] {
+    width: 17.6%;
+
+    @include tablets {
+      width: auto;
+    }
+
     svg {
-      @include phones {
+      @include tablets {
         width: 32px;
         height: 25px;
       }
@@ -174,8 +223,14 @@
   }
 
   label[for="sci-fi-tab"] {
+    width: 14%;
+
+    @include tablets {
+      width: auto;
+    }
+
     svg {
-      @include phones {
+      @include tablets {
         width: 22px;
         height: 24px;
       }
@@ -205,12 +260,8 @@
     margin: 0;
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
-
-    @include tablets {
-      justify-content: center;
-    }
 
     @include phones {
       flex-direction: column;
@@ -222,7 +273,7 @@
     width: 344px;
     height: 232px;
     position: relative;
-    margin: 0 12px 32px 0;
+    margin: 0 24px 32px 0;
 
     @include phones {
       width: 328px;

@@ -11,66 +11,67 @@ block variables
 
 
 block main
+  - var simbol = '<span>&#8381</span>'
   -
     var times = [
       {
         time: "9:45",
-        price: "1400 ₽",
+        price: "1400",
         reserved: false
       },
       {
         time: "11:00",
-        price: "1400 ₽",
+        price: "1400",
         reserved: false
       },
       {
         time: "12:15",
-        price: "1400 ₽",
+        price: "1400",
         reserved: true
       },
       {
         time: "13:30",
-        price: "1400 ₽",
+        price: "1400",
         reserved: true
       },
       {
         time: "14:45",
-        price: "1400 ₽",
+        price: "1400",
         reserved: false
       },
       {
         time: "16:00",
-        price: "1500 ₽",
+        price: "1500",
         reserved: false
       },
       {
         time: "17:15",
-        price: "1500 ₽",
+        price: "1500",
         reserved: true
       },
       {
         time: "18:30",
-        price: "1500 ₽",
+        price: "1500",
         reserved: false
       },
       {
         time: "19:45",
-        price: "1500 ₽",
+        price: "1500",
         reserved: false
       },
       {
         time: "21:00",
-        price: "1800 ₽",
+        price: "1800",
         reserved: false
       },
       {
         time: "22:15",
-        price: "1800 ₽",
+        price: "1800",
         reserved: true
       },
       {
         time: "23:30",
-        price: "2000 ₽",
+        price: "2000",
         reserved: true
       },
 
@@ -118,13 +119,13 @@ block main
                     input(type="radio" name="tab" id="time-" + (index + 1) disabled)
                     label.table__time-reserved(for="time-" + (index + 1))
                       span= time.time
-                    span= time.price
+                    span!= time.price + ' ' + simbol
                 else
                   .table__time
                     input(type="radio" name="tab" id="time-" + (index + 1))
                     label(tabindex=0 for="time-" + (index + 1))
                       span= time.time
-                    span= time.price
+                    span!= time.price + ' ' + simbol
 
 
 

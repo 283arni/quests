@@ -1,12 +1,12 @@
 .maniac {
   display: flex;
   align-items: center;
-  background: $color-black no-repeat 100% 20%/ 120% url("../img/maniac-min.jpg");
+  background: $color-black no-repeat center/cover url("../img/bg/bg-maniac.jpg");
 
   @include phones {
     padding-top: 88px;
     align-items: flex-end;
-    background: $background-maniac, $color-black no-repeat center 30%/ 250% url("../img/maniac-min.jpg");
+    background: $background-maniac, $color-black no-repeat center/cover url("../img/bg/bg-maniac-phone.jpg");
   }
 }
 

@@ -524,9 +524,9 @@ button,
 
 .container {
   width: 100%;
-  max-width: 1110px;
+  max-width: 1366px;
   margin: 0 auto;
-  padding: 0 10px; }
+  padding: 0 136px; }
   @media (max-width: 1023px) {
     .container {
       padding: 0 32px; } }
@@ -846,19 +846,19 @@ button,
     .bottom a:active {
       opacity: 0.8; }
   .bottom a[href="https://www.instagram.com/"] {
-    background: no-repeat center url("../img/bg/instagram-default.svg"); }
+    background: no-repeat center url("../img/bg/instagram-default.png"); }
     @media (max-width: 767px) {
       .bottom a[href="https://www.instagram.com/"] {
         background-size: 100%; } }
     .bottom a[href="https://www.instagram.com/"]:hover {
-      background-image: url("../img/bg/instagram-hover.svg"); }
+      background-image: url("../img/bg/instagram-hover.png"); }
   .bottom a[href="https://www.vk.com/"] {
-    background: no-repeat center url("../img/bg/vk-default.svg"); }
+    background: no-repeat center url("../img/bg/vk-default.png"); }
     @media (max-width: 767px) {
       .bottom a[href="https://www.vk.com/"] {
         background-size: 100%; } }
     .bottom a[href="https://www.vk.com/"]:hover {
-      background-image: url("../img/bg/vk-hover.svg"); }
+      background-image: url("../img/bg/vk-hover.png"); }
   .bottom button {
     font-weight: 500;
     font-size: 11px;
@@ -1189,7 +1189,8 @@ button,
     font-size: 15px;
     margin-bottom: 15px; }
   .modal__text textarea {
-    min-height: 120px; }
+    min-height: 120px;
+    resize: none; }
 
 .modal__check {
   display: -webkit-box;
@@ -1246,6 +1247,7 @@ button,
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  padding-top: 10px;
   background: #0e0e0e center/cover url("../img/bg/main-min.jpg"); }
   @media (max-width: 1023px) {
     .main {
@@ -1276,9 +1278,11 @@ button,
     font-size: 64px;
     color: #ffffff;
     line-height: 110%;
-    margin: 0 0 32px 0; }
+    margin: 0 0 32px 0;
+    letter-spacing: -0.01em; }
     @media (max-width: 767px) {
       .main__wrapper h1 {
+        letter-spacing: normal;
         font-size: 36px;
         width: 90%;
         margin: 0 auto 35px auto; } }
@@ -1316,39 +1320,40 @@ button,
 .quests {
   background: -webkit-gradient(linear, left bottom, left top, from(#141414), to(#1f1d1d));
   background: linear-gradient(0deg, #141414 0%, #1f1d1d 100%);
+  height: 100%;
   padding: 123px 0; }
   @media (max-width: 767px) {
     .quests {
       padding-top: 90px; } }
 
-.quests__wrapper {
-  width: 99%; }
-  @media (max-width: 1023px) {
-    .quests__wrapper {
-      width: 100%; } }
-  .quests__wrapper > span {
-    display: inline-block;
-    vertical-align: middle;
-    font-weight: 500;
-    font-size: 13px;
-    letter-spacing: 0.03em;
-    color: #f2890f;
-    margin-bottom: 8px; }
-    @media (max-width: 767px) {
-      .quests__wrapper > span {
-        margin-bottom: 13px; } }
-  .quests__wrapper h1 {
-    font-weight: 800;
-    font-size: 64px;
-    margin: 0 0 46px 0;
-    line-height: normal;
-    color: #ffffff;
-    letter-spacing: -0.01em; }
-    @media (max-width: 767px) {
-      .quests__wrapper h1 {
-        font-size: 36px;
-        line-height: 110%;
-        margin-bottom: 44px; } }
+@media (max-width: 1023px) {
+  .quests__wrapper {
+    width: 100%; } }
+
+.quests__wrapper > span {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: #f2890f;
+  margin-bottom: 8px; }
+  @media (max-width: 767px) {
+    .quests__wrapper > span {
+      margin-bottom: 13px; } }
+
+.quests__wrapper h1 {
+  font-weight: 800;
+  font-size: 64px;
+  margin: 0 0 46px 0;
+  line-height: normal;
+  color: #ffffff;
+  letter-spacing: -0.01em; }
+  @media (max-width: 767px) {
+    .quests__wrapper h1 {
+      font-size: 36px;
+      line-height: 110%;
+      margin-bottom: 44px; } }
 
 .quests__tabs {
   position: relative; }
@@ -1369,7 +1374,13 @@ button,
   .quests__tabs form {
     display: -webkit-box;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    @media (max-width: 767px) {
+      .quests__tabs form {
+        -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap; } }
   .quests__tabs label {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
@@ -1457,16 +1468,25 @@ button,
             justify-content: space-between;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap; }
-    @media (max-width: 767px) {
+    @media (max-width: 1023px) {
       .quests__list ul {
         -webkit-box-pack: center;
             -ms-flex-pack: center;
                 justify-content: center; } }
+    @media (max-width: 767px) {
+      .quests__list ul {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; } }
   .quests__list li {
     width: 344px;
     height: 232px;
     position: relative;
-    margin: 0 0 32px 0; }
+    margin: 0 12px 32px 0; }
     @media (max-width: 767px) {
       .quests__list li {
         width: 328px;
@@ -1585,14 +1605,14 @@ button,
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #0e0e0e no-repeat 100% 20%/120% url("../img/maniac-min.jpg"); }
+  background: #0e0e0e no-repeat center/cover url("../img/bg/bg-maniac.jpg"); }
   @media (max-width: 767px) {
     .maniac {
       padding-top: 88px;
       -webkit-box-align: end;
           -ms-flex-align: end;
               align-items: flex-end;
-      background: linear-gradient(167.98deg, rgba(99, 60, 15, 0) 23.22%, rgba(99, 60, 15, 0) 37.46%, #24150e 60.63%, #1a140d 106.79%), #0e0e0e no-repeat center 30%/250% url("../img/maniac-min.jpg"); } }
+      background: linear-gradient(167.98deg, rgba(99, 60, 15, 0) 23.22%, rgba(99, 60, 15, 0) 37.46%, #24150e 60.63%, #1a140d 106.79%), #0e0e0e no-repeat center/cover url("../img/bg/bg-maniac-phone.jpg"); } }
 
 .maniac__wrapper {
   display: -webkit-box;
@@ -1747,9 +1767,7 @@ button,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  padding-top: 137px;
   position: relative;
   background: #0e0e0e no-repeat right 30%/100% url("../img/maniac-min.jpg"); }
   @media (max-width: 1023px) {
@@ -1811,7 +1829,7 @@ button,
       opacity: 0.6; }
 
 .table__subtitle {
-  margin: 0 0 20px 6px; }
+  margin: 0 0 17px 4px; }
   @media (max-width: 767px) {
     .table__subtitle {
       margin: 0 0 18px 0; } }

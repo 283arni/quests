@@ -108,18 +108,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
- // Utils
-// ---------------------------------
 
-Object(_utils_ie_fix__WEBPACK_IMPORTED_MODULE_0__["ieFix"])();
-Object(_utils_ios_vh_fix__WEBPACK_IMPORTED_MODULE_1__["iosVhFix"])(); // Modules
-// ---------------------------------
 
-Object(_modules_init_modals__WEBPACK_IMPORTED_MODULE_2__["initModals"])();
-Object(_modules_form__WEBPACK_IMPORTED_MODULE_3__["default"])();
-Object(_modules_location__WEBPACK_IMPORTED_MODULE_4__["default"])();
-Object(_modules_quests__WEBPACK_IMPORTED_MODULE_5__["default"])();
-Object(_modules_table__WEBPACK_IMPORTED_MODULE_6__["default"])();
+var initMain = function initMain() {
+  Object(_utils_ie_fix__WEBPACK_IMPORTED_MODULE_0__["ieFix"])();
+  Object(_utils_ios_vh_fix__WEBPACK_IMPORTED_MODULE_1__["iosVhFix"])();
+  Object(_modules_init_modals__WEBPACK_IMPORTED_MODULE_2__["initModals"])();
+  Object(_modules_form__WEBPACK_IMPORTED_MODULE_3__["default"])();
+  Object(_modules_location__WEBPACK_IMPORTED_MODULE_4__["default"])();
+  Object(_modules_quests__WEBPACK_IMPORTED_MODULE_5__["default"])();
+  Object(_modules_table__WEBPACK_IMPORTED_MODULE_6__["default"])();
+};
+
+initMain();
 
 /***/ }),
 

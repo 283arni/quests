@@ -7,18 +7,16 @@ import initLocation from './modules/location';
 import tabsSlider from './modules/quests';
 import initTableQuest from './modules/table';
 
+const initMain = () => {
+  ieFix();
+  iosVhFix();
 
-// Utils
-// ---------------------------------
+  initModals();
+  initForm();
+  initLocation();
+  tabsSlider();
+  initTableQuest();
+};
 
-ieFix();
-iosVhFix();
 
-// Modules
-// ---------------------------------
-
-initModals();
-initForm();
-initLocation();
-tabsSlider();
-initTableQuest();
+initMain();

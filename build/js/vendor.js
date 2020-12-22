@@ -147,6 +147,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _vendor_swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./vendor/swiper */ "./js/vendor/swiper.js");
 
 
+var initSwiper = function initSwiper() {
+  return _vendor_swiper__WEBPACK_IMPORTED_MODULE_0__;
+};
+
+initSwiper();
+
 /***/ }),
 
 /***/ "./js/vendor/swiper.js":

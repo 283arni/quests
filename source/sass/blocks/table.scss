@@ -1,6 +1,6 @@
 .table {
   display: flex;
-  align-items: center;
+  padding-top: 137px;
   position: relative;
   background: $color-black no-repeat right 30%/100% url("../img/maniac-min.jpg");
 
@@ -82,7 +82,7 @@
 
 
 .table__subtitle {
-  margin: 0 0 20px 6px;
+  margin: 0 0 17px 4px;
 
   @include phones {
     margin: 0 0 18px 0;

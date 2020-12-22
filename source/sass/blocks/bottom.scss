@@ -46,26 +46,26 @@
   }
 
   a[href="https://www.instagram.com/"] {
-    background: no-repeat center url("../img/bg/instagram-default.svg");
+    background: no-repeat center url("../img/bg/instagram-default.png");
 
     @include phones {
       background-size: 100%;
     }
 
     &:hover {
-      background-image: url("../img/bg/instagram-hover.svg");
+      background-image: url("../img/bg/instagram-hover.png");
     }
   }
 
   a[href="https://www.vk.com/"] {
-    background: no-repeat center url("../img/bg/vk-default.svg");
+    background: no-repeat center url("../img/bg/vk-default.png");
 
     @include phones {
       background-size: 100%;
     }
 
     &:hover {
-      background-image: url("../img/bg/vk-hover.svg");
+      background-image: url("../img/bg/vk-hover.png");
     }
   }
 

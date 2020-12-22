@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  padding-top: 10px;
   background: $color-black center/cover url("../img/bg/main-min.jpg");
 
   @include tablets {
@@ -36,8 +37,10 @@
     color: $color-white;
     line-height: 110%;
     margin: 0 0 32px 0;
+    letter-spacing: -0.01em;
 
     @include phones {
+      letter-spacing: normal;
       font-size: 36px;
       width: 90%;
       margin: 0 auto 35px auto;
